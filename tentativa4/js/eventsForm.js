@@ -19,10 +19,16 @@ btnCreateEvent.addEventListener("click", (e) => {
 
 //    console.log(event)
 
+   eventsList = JSON.parse(localStorage.getItem("eventsListabc"))
+
    eventsList.push(event)
 
 //    console.log(eventsList)
+   
 
    saveEventsLocalStorage(eventsList)
+
+   appendListCards()
    
 })
+
