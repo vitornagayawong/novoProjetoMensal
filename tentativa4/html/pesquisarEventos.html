@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentativa 3</title>
-    <link rel="stylesheet" href="../css/tentativa4.css">
+    <link rel="stylesheet" href="../css/tentativa3.css">
 </head>
 <body>
     <header class="header">
@@ -16,11 +16,13 @@
         <a href="pesquisarEventos.html" class="navigation-a">Pesquisar eventos</a>
     </nav>
     <main>
-        <div class="principal">
-            <h1 class="principal_search">Pesquisar</h1>
+        <div class="principal_search" id="principal_search">
+            <h1 class="principal_search_btn">Pesquisar</h1>
             <nav class="principal_nav">
-                <img id="img1" src="../resources/326690_magnify_search_zoom_icon.png" alt="">
-                <input type="search">
+                <button id="btnSearchEvent">
+                    <img id="img1" src="../resources/326690_magnify_search_zoom_icon.png" alt="">
+                </button>
+                <input type="search" id="inputSearch">
             </nav>
         </div>
         
@@ -32,5 +34,6 @@
     </footer>
 
     <script src="../js/events.js"></script>
+    <script src="../js/pesquisarEventos.js"></script>
 </body>
 </html>
