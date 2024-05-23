@@ -207,3 +207,7 @@ body {
 .apointment_notes {
     height: 6rem;
 }
+
+.results_container {
+    font-size: 0.5em;
+}

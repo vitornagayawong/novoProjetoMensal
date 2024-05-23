@@ -28,12 +28,12 @@ function plotEventCard(event) {
    card.appendChild(initialTime)
    card.appendChild(finalTime)
    card.appendChild(urgency)
-   card.appendChild(records)
+   card.appendChild(records)   
 
-   // card.classList.add(`lista-eventos${indexCard}`)   
-
-   const divPrincipal = document.querySelector(".principal_search")
-   divPrincipal.appendChild(card)
+   // const divPrincipal = document.querySelector(".principal_search")
+   // divPrincipal.appendChild(card)
+   const resultsContainer = document.querySelector('.results_container');
+   resultsContainer.appendChild(card)
 }
 
 function searchEvent(e) {
@@ -49,30 +49,20 @@ function searchEvent(e) {
 
       const divPrincipalSearch = document.querySelector('.principal_search')
       const inputSearch = document.getElementById('inputSearch')
-
-      //  if(divPrincipalSearch.textContent !== '')
-      //  divPrincipalSearch.textContent = ''
-
+      // const inputSearchNextSibling = inputSearch.nextElementSibling
+      // console.log(inputSearchNextSibling)
+      // inputSearchNextSibling.innerHTML = ''
+      
+      const resultsContainer = document.querySelector('.results_container');
+      resultsContainer.innerHTML = ''; // Limpa o conteúdo anterior
+    
       searchResults.forEach(card => {
-
-         // if (divPrincipalSearch.textContent !== '') {
-         //    divPrincipalSearch.textContent = ''
-         //    const foundedCard = plotEventCard(card)
-         //    divPrincipalSearch.appendChild(foundedCard)
-         // }
-
          const foundedCard = plotEventCard(card)
          console.log(foundedCard)
-         divPrincipalSearch.appendChild(foundedCard)
-         // inputSearch.insertAdjacentHTML('afterend', foundedCard)
+         resultsContainer.appendChild(foundedCard)         
       })
    }
 }
-
-//  window.addEventListener('DOMContentLoaded', () => {
-//     eventsList = JSON.parse(localStorage.getItem('eventsListabc'))
-//     console.log(eventsList)
-//  })
 
 const btnSearchEvent = document.querySelector('#btnSearchEvent')
 

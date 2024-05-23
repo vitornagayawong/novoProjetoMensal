@@ -1,16 +1,5 @@
-document.addEventListener("DOMContentLoaded", (e)=>{
-    // console.log("visualizar eventos")
+document.addEventListener("DOMContentLoaded", (e)=> {    
     e.preventDefault()
-    appendListCards()
-    
-    // const visualizeList = JSON.parse(localStorage.getItem("eventsListabc"))
-
-    // for(let i = 0; i < visualizeList.length; i++) {
-    //     eventsList.push(visualizeList[i])
-    // }
-
-    // let visualizeListStringfy = JSON.stringify(visualizeList)
-    // localStorage.setItem("eventsListabc", visualizeListStringfy)
-    
+    appendListCards()    
 })
 
