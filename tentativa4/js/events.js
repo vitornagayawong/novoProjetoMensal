@@ -110,6 +110,10 @@ function excludeEvent(eventId) {
 
 }
 
+function openModal() {
+   new bootstrap.Modal('#modalAberto').show();
+}
+
 
 function editEvent (eventId) {
    let eventsList = JSON.parse(localStorage.getItem('eventsListabc')) || [];
