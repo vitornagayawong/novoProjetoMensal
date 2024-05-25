@@ -23,6 +23,8 @@ btnCreateEvent.addEventListener("click", (e) => {
 
       saveEventsLocalStorage(eventsList)
 
+      // alert('Evento criado!')
+
       appendListCards();        
 
    } else {
@@ -33,7 +35,11 @@ btnCreateEvent.addEventListener("click", (e) => {
 
       saveEventsLocalStorage(eventsList)
 
+      // alert('Evento criado!')
+
       appendListCards();
    }
+
+   
 })
 

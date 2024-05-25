@@ -96,17 +96,31 @@ function excludeEvent(eventId) {
    let eventsList = JSON.parse(localStorage.getItem('eventsListabc')) || [];
 
    let indexToFind = eventsList.findIndex( object => object.id === eventId)
-
-   console.log("o indice agora é esse: " + indexToFind)
    
    if(indexToFind !== -1) {
       eventsList.splice(indexToFind, 1)
       
       localStorage.setItem('eventsListabc', JSON.stringify(eventsList));
-   }
-   
-   console.log("OOOO indice agora é esse: " + indexToFind)      
+
+      const divPrincipal = document.querySelector(".lista-eventos")
+      divPrincipal.innerHTML = ''
+
+      appendListCards()
+   }     
 
 }
+
+
+function editEvent (eventId) {
+   let eventsList = JSON.parse(localStorage.getItem('eventsListabc')) || [];
+
+   let indexToFind = eventsList.findIndex( object => object.id === eventId)
+
+   // console.log(`Você clicou no evento de índice ${indexToFind}`)
+   window.alert('Clicou em editar')
+   
+}
+
+
 
 
