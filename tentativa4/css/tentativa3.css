@@ -70,7 +70,9 @@ body {
     background-color: rgb(240, 240, 240);
 }
 
-
+.principal {
+    padding-bottom: 1rem;
+}
 
 .rodape p{
     background-color: var(--header-nav-color);
@@ -142,7 +144,7 @@ body {
 }
 
 #btn-sent-form {
-    width: 10%;
+    width: 6rem;
     margin: auto;
 }
 
@@ -310,12 +312,12 @@ body {
     bottom: 10px;
 }
 
-.cardEvent{
+.cardEvent {
     border-bottom: 1px solid darkblue;
     position: relative;
 }
 
-.cardEvent p{
+.cardEvent p {
     font-weight: bold;
     letter-spacing: 1px;
     /* color: color-mix(in srgb, red, white 90%); */
@@ -344,3 +346,39 @@ body {
     margin-right: auto;
     margin-left: auto;
 }
+
+/* ************************************************************ */
+/* Responsividade */
+/* ************************************************************ */
+
+@media screen and (min-width: 0px) and (max-width: 360px) {
+    .cardEvent {
+        /* display: flex; */
+        flex-direction: column;
+        /* min-width: 305px; */
+    }
+
+    .lista-eventos {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 330px){
+    .form_urgencia {
+        display: flex;
+        flex-direction: column;
+        /* position: relative; */
+    }
+
+    .form_urgencia_alta, .form_urgencia_media, .form_urgencia_baixa {
+        width: 6rem;
+    }
+
+    .form_urgencia input {
+        position: relative;
+        bottom: 35px;
+        right: 30px;
+    }
+}
+
+
