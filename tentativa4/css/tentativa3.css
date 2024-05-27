@@ -66,7 +66,7 @@ body {
     margin-top: 0;
     min-height: calc(100vh - 10rem - 40px);
     /* margin-bottom: 2rem; */
-    padding-bottom: 3rem;
+    /* padding-bottom: 3rem; */
     background-color: rgb(240, 240, 240);
 }
 
@@ -128,10 +128,12 @@ body {
 
 #data {
     margin-right: 90%;
+    width: 10rem;
 }
 
 #hrComeco, #hrFim {
     margin-right: 92%;
+    width: 10rem;
 }
 
 #lembrete {
@@ -216,19 +218,6 @@ body {
 /* FORMULÁRIO BOTÃO EDITAR */
 /* ************************************************************ */
 
-/* .editForm {
-    display: none;
-    background: rgba(0, 0, 0, 0.5);
-    top: 50%;
-    right: 50%;
-    position: fixed;
-    z-index: 2;
-}
-
-.editForm_urgency_radios {
-    display: flex;
-} */
-
 .editForm {
     display: none;
     position: fixed;
@@ -246,13 +235,59 @@ body {
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 3;
+    width: 40rem;
+}
+
+.editForm_opened_wrap div label {
+    width: 7rem;
+}
+
+.editForm_opened_wrap div input {
+   margin-bottom: 1rem;
+}
+
+#editDate, #editInitialTime, #editFinalTime {
+    width: 8rem;
+}
+
+.editForm_urgencia_alta, .editForm_urgencia_media, .editForm_urgencia_baixa {
+    border: 1px solid black;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.editForm_urgencia_alta {
+    background-color: red;
+    font-weight: bold;
+}
+
+.editForm_urgencia_media {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+.editForm_urgencia_baixa {
+    background-color: green;
+    font-weight: bold;
+}
+
+#editTitle, #editDescription {
+    width: 35rem;
+} 
+
+#editRecords {
+    width: 36rem;
+    height: 8rem;
+}
+
+.editForm_urgencia {
+    display: flex;
+    gap: 1rem;      
 }
 
 .editButtons {
     display: flex;
-    gap: 1rem;
-    
 }
 
 .editButtons div{
@@ -264,3 +299,48 @@ body {
     font-weight: bold;
 }
 
+/* ************************************************************ */
+/* CARDS EVENTOS */
+/* ************************************************************ */
+
+.card_option {
+    /* float: right; */
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.cardEvent{
+    border-bottom: 1px solid darkblue;
+    position: relative;
+}
+
+.cardEvent p{
+    font-weight: bold;
+    letter-spacing: 1px;
+    /* color: color-mix(in srgb, red, white 90%); */
+}
+
+/* ************************************************************ */
+/* PESQUISAR EVENTOS */
+/* ************************************************************ */
+
+#btnSearchEvent {
+    padding: 0.4rem;
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+}
+
+#btnSearchEvent:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.plotedCard {
+    margin-top: 2rem;
+    font-weight: bold;
+    border: 1px solid black;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+}

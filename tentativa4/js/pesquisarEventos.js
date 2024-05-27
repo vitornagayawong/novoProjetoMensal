@@ -1,10 +1,11 @@
 function plotEventCard(event) {
    const card = document.createElement("div")
+   card.classList.add('plotedCard')
 
-   const title = document.createElement("h1")
+   const title = document.createElement("p")
    title.textContent = `Título: ${event.title}`
 
-   const description = document.createElement("h2")
+   const description = document.createElement("p")
    description.textContent = `Descrição: ${event.description}`
 
    const date = document.createElement("p")
@@ -15,6 +16,18 @@ function plotEventCard(event) {
 
    const finalTime = document.createElement("p")
    finalTime.textContent = `Hora do Fim: ${event.finalTime}`
+
+   switch (event.urgency) {
+      case "Alta":
+          card.style.backgroundColor = "color-mix(in srgb, red, white 70%)";
+          break;
+      case "Média":
+          card.style.backgroundColor = "color-mix(in srgb, yellow, white 70%)";
+          break;
+      case "Baixa":
+          card.style.backgroundColor = "color-mix(in srgb, green, white 70%)";
+          break;
+  }
 
    const urgency = document.createElement("p")
    urgency.textContent = `Urgência: ${event.urgency}`
@@ -41,6 +54,7 @@ function searchEvent(e) {
    e.preventDefault()
    const txtSearchInput = document.getElementById('inputSearch').value
    let eventsList = JSON.parse(localStorage.getItem("eventsListabc"))
+   
    if (eventsList.length > 0) {
       searchResults = eventsList.filter(({ title }) => title.includes(txtSearchInput))
       //mesma coisa que item.title

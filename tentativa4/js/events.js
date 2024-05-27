@@ -46,6 +46,7 @@ var indexCard = 0
 
 function createEventCard(event) {
    const card = document.createElement("div")
+   card.classList.add('cardEvent')
 
    const btnDelete = document.createElement("button")
    btnDelete.textContent = "Excluir"
@@ -56,10 +57,16 @@ function createEventCard(event) {
    // btnEdit.setAttribute("id", event.id)
    btnEdit.setAttribute("onclick", `editEvent(${event.id})`)
 
-   const title = document.createElement("h1")
+   const card_options = document.createElement('div') 
+   card_options.classList.add('card_option')
+
+   card_options.appendChild(btnEdit)
+   card_options.appendChild(btnDelete)
+
+   const title = document.createElement("p")
    title.textContent = `Título: ${event.title}`
 
-   const description = document.createElement("h2")
+   const description = document.createElement("p")
    description.textContent = `Descrição: ${event.description}`
 
    const date = document.createElement("p")
@@ -71,25 +78,37 @@ function createEventCard(event) {
    const finalTime = document.createElement("p")
    finalTime.textContent = `Hora do Fim: ${event.finalTime}`
 
+   switch (event.urgency) {
+      case "Alta":
+          card.style.backgroundColor = "color-mix(in srgb, red, white 70%)";
+          break;
+      case "Média":
+          card.style.backgroundColor = "color-mix(in srgb, yellow, white 70%)";
+          break;
+      case "Baixa":
+          card.style.backgroundColor = "color-mix(in srgb, green, white 70%)";
+          break;
+  }
+
    const urgency = document.createElement("p")
    urgency.textContent = `Urgência: ${event.urgency}`
 
    const records = document.createElement("p")
    records.textContent = `Lembretes: ${event.records}`
 
-   const identificao = document.createElement('p')
-   identificao.textContent = `id: ${event.id}`
+   // const identificao = document.createElement('p')
+   // identificao.textContent = `id: ${event.id}`
 
-   card.appendChild(identificao)
-   card.appendChild(btnEdit)
-   card.appendChild(btnDelete)
+   // card.appendChild(identificao)
    card.appendChild(title)
    card.appendChild(description)
    card.appendChild(date)
    card.appendChild(initialTime)
    card.appendChild(finalTime)
    card.appendChild(urgency)
+   
    card.appendChild(records)
+   card.appendChild(card_options)
 
    const divPrincipal = document.querySelector(".lista-eventos")
    divPrincipal.appendChild(card)
